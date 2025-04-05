@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .square {
+    width: 100px;
+    height: 100px;
+    margin: 20%;
+    background-color: aqua;
+    transition-property: all, background-color;/* all things inside the square includeing the background color This means that when the background color of the element changes, it will animate smoothly.*/
+    transition-duration: 0.5s, 0.5s;
+    transition-timing-function: ease-in-out, ease-in-out;
+  }
+  .square:hover {
+    transform: scale(3);
+    background-color: purple;
+  }
+  
+  .circle {
+    width: 150px;
+    height: 150px;
+    margin: 5%;
+    background-color: pink;
+    border-radius: 50%;
+    animation-name: roll;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes roll {
+    /* At the start (0%) and end (100%) of the animation, the element should be positioned at -200px from its default location. */
+    0%,
+    100% {
+      transform: translateX(-200px);
+    }
+    /*At 50% of the animation, the element should be positioned at 200px from its default location.*/
+    50% {
+      transform: translateX(200px);
+    }
+  }
